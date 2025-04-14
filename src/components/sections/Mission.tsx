@@ -88,7 +88,7 @@ export const Mission = () => {
   };
 
   return (
-    <section className="bg-[rgba(13,13,13,1)] flex w-full flex-col items-center mt-[211px] pt-12 pb-[74px] px-[70px] max-md:max-w-full max-md:mt-10 max-md:px-5 overflow-hidden">
+    <section className="bg-[rgba(13,13,13,1)] flex w-full flex-col items-center mt-[100px] pt-12 pb-[74px] px-[70px] max-md:max-w-full max-md:mt-10 max-md:px-5 overflow-hidden">
       <motion.div 
         className="w-full max-w-[1513px] max-md:max-w-full"
         variants={containerVariants}
@@ -119,7 +119,7 @@ export const Mission = () => {
               initial="rest"
               whileHover="hover"
             >
-              <div className="flex flex-col relative aspect-[0.949] w-full pt-[21px] pb-[111px] px-[45px] rounded-[30px] max-md:pb-[100px] max-md:px-5 overflow-hidden">
+              <div className="flex flex-col relative aspect-[0.949] w-full pt-[40px] pb-[111px] px-[45px] rounded-[30px] max-md:pb-[100px] max-md:px-5 overflow-hidden">
                 <motion.div
                   className="absolute h-full w-full inset-0 bg-gradient-to-br from-purple-900/20 to-black/60"
                   animate={{ 
@@ -189,7 +189,7 @@ export const Mission = () => {
               initial="rest"
               whileHover="hover"
             >
-              <div className="flex flex-col relative aspect-[0.949] w-full pt-[21px] pb-[111px] px-[45px] rounded-[30px] max-md:pb-[100px] max-md:px-5 overflow-hidden">
+              <div className="flex flex-col relative aspect-[0.949] w-full pt-[40px] pb-[111px] px-[45px] rounded-[30px] max-md:pb-[100px] max-md:px-5 overflow-hidden">
                 <motion.div
                   className="absolute h-full w-full inset-0 bg-gradient-to-br from-blue-900/20 to-black/60"
                   animate={{ 

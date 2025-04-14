@@ -1,9 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import wave from "@/assets/technologies/Z-Wave Alliance_idr-SHyQJ8_0.png"
-import zed from "@/assets/technologies/Z-Wave Alliance_idr-SHyQJ8_0.png"
+import zed from "@/assets/technologies/idl5Z2fp7B_1743261125046.png"
 import freescale from "@/assets/technologies/freescale-semiconductor-seeklogo.png"
 import alexa from "@/assets/technologies/alexa-amazon-seeklogo.png"
+import wifi from "@/assets/technologies/wifi-seeklogo.png"
+import smartthings from  "@/assets/technologies/idH1ONUL3r_1743261094762.png"
+import bluetooth from "@/assets/technologies/image 2.png"
+import matter from "@/assets/technologies/image 8.png"
 
 
 export const Technologies = () => {
@@ -16,7 +20,11 @@ export const Technologies = () => {
     wave,
     freescale,
     alexa,
-    zed
+    zed,
+    wifi,
+    smartthings,
+    bluetooth,
+    matter
 
   ];
   
@@ -174,14 +182,14 @@ export const Technologies = () => {
         </div>
         
         {/* Additional feature: Pause on hover */}
-        <motion.div 
+        {/* <motion.div 
           className="flex justify-center mt-8 text-[rgba(122,122,122,1)] text-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
           <span>* Hover over a logo to pause the carousel</span>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </section>
   );

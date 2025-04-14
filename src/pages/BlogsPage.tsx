@@ -130,7 +130,7 @@ const BlogsPage = () => {
     <div className="bg-[rgba(13,13,13,1)] min-h-screen">
       {/* Header section */}
       <motion.div 
-        className="pt-32 pb-16 px-8 max-w-7xl mx-auto text-center"
+        className=" pb-16 px-8 max-w-7xl mx-auto text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -143,7 +143,7 @@ const BlogsPage = () => {
         </p>
 
         {/* Search input */}
-        <div className="mt-12 max-w-xl mx-auto">
+        <div className="max-w-xl mx-auto">
           <div className="relative">
             <input
               type="text"

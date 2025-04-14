@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"; // Updated to use React Router
 
 const Header = () => {
   const [menuItems, setMenuItems] = useState([
-    { label: "Home", isActive: false, href: "/" },
-    { label: "Services", isActive: true, href: "/services" },
+    { label: "Home", isActive: true, href: "/" },
+    { label: "Services", isActive: false, href: "/services" },
     { label: "Contact us", isActive: false, href: "/contact" },
     { label: "Blogs", isActive: false, href: "/blogs" },
   ]);

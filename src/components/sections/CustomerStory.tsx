@@ -1,37 +1,42 @@
 export const CustomerStory = () => {
   return (
-    <section className="bg-[rgba(13,13,13,1)] flex w-full flex-col items-center justify-center px-[70px] py-[107px] max-md:max-w-full max-md:pt-[100px] max-md:px-5">
-      <div className="w-[1161px] max-w-full ml-[51px]">
-        <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
-          <div className="w-[46%] max-md:w-full max-md:ml-0">
-            <div className="flex w-full flex-col self-stretch text-lg font-normal tracking-[-0.18px] leading-[1.4] my-auto max-md:max-w-full max-md:mt-10">
-              <div className="flex items-stretch gap-2 text-[rgba(208,255,0,1)]">
+    <section className="bg-[rgba(13,13,13,1)] flex w-full flex-col items-center justify-center px-5 py-16 md:px-10 lg:px-16 xl:px-[70px] md:py-20 xl:py-[107px]">
+      <div className="w-full max-w-7xl">
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Text Content */}
+          <div className="w-full md:w-[46%] flex flex-col">
+            <div className="flex flex-col w-full text-lg font-normal tracking-[-0.18px] leading-[1.4]">
+              <div className="flex items-center gap-2 text-[rgba(208,255,0,1)]">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/62b92f30ff7e104a65662649ef89c6ce794f6d3d?placeholderIfAbsent=true"
                   alt="Customer story icon"
-                  className="aspect-[1] object-contain w-[25px] shrink-0"
+                  className="w-6 h-6 object-contain"
                 />
-                <div className="basis-auto">Customer story</div>
+                <div>Customer story</div>
               </div>
-              <h2 className="text-[rgba(204,204,204,1)] text-[38px] leading-[42px] tracking-[-1.14px] self-stretch mt-[43px] max-md:max-w-full max-md:mt-10">
+              
+              <h2 className="text-[rgba(204,204,204,1)] text-2xl md:text-3xl lg:text-[38px] leading-tight md:leading-[42px] tracking-[-1.14px] mt-6 md:mt-[43px]">
                 "Our growth no longer necessitates the recruitment and education
                 of additional smart home integration specialists"
               </h2>
-              <div className="flex items-stretch gap-[7px] text-[rgba(122,122,122,1)] mt-[38px] cursor-pointer hover:text-[rgba(208,255,0,1)] transition-colors">
-                <div className="grow my-auto">Read the story</div>
+              
+              <div className="flex items-center gap-2 text-[rgba(122,122,122,1)] mt-6 md:mt-[38px] cursor-pointer hover:text-[rgba(208,255,0,1)] transition-colors">
+                <div className="my-auto">Read the story</div>
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/b64baa1340288002bdbc9d9bbb84c7a08b401013?placeholderIfAbsent=true"
                   alt="Arrow right"
-                  className="aspect-[1] object-contain w-8 shrink-0"
+                  className="w-6 h-6 object-contain"
                 />
               </div>
             </div>
           </div>
-          <div className="w-[54%] ml-5 max-md:w-full max-md:ml-0">
+          
+          {/* Image */}
+          <div className="w-full md:w-[54%] mt-8 md:mt-0">
             <img
               src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/757d1739f4d0239420177ef1b69a92b630e33f39?placeholderIfAbsent=true"
               alt="Customer story illustration"
-              className="aspect-[1.5] object-contain w-full grow rounded-[20px] max-md:max-w-full max-md:mt-[37px]"
+              className="w-full h-auto object-cover rounded-[20px]"
             />
           </div>
         </div>
