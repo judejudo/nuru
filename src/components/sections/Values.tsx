@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import green from '@/assets/icons/green-technology.png';
+import security from '@/assets/icons/security.png';
+import design from '@/assets/icons/design.png';
 
 export const Values = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -161,6 +164,47 @@ export const Values = () => {
       id="values-section"
       className="bg-[rgba(13,13,13,1)] z-10 flex w-full flex-col items-center -mt-5 pt-24 px-[70px] max-md:max-w-full max-md:px-5 overflow-hidden"
     >
+      {/* Mobile-only Header (shows first on mobile) */}
+      <div className="hidden max-md:block w-full max-w-[1396px] mb-10">
+        <motion.div 
+          className="flex flex-col items-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="flex items-center gap-2 text-lg text-[rgba(208,255,0,1)] leading-[1.4]">
+            <motion.img
+              src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/e70032a469838839b8099a09b3aa4a833bcdc451?placeholderIfAbsent=true"
+              alt="Values icon"
+              className="aspect-[1] object-contain w-[25px]"
+              animate={{ 
+                rotate: [0, 5, -5, 0],
+                transition: { duration: 2, repeat: Infinity, repeatDelay: 3 }
+              }}
+            />
+            <div>what we believe in</div>
+          </div>
+          
+          <motion.h2 
+            className="text-[40px] leading-none tracking-[-1.32px] text-center mt-4"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+            <motion.span
+              initial={{ color: "white" }}
+              animate={{ 
+                color: ["rgba(255,255,255,1)", "rgba(208,255,0,0.9)", "rgba(255,255,255,1)"] 
+              }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              OUR VALUES
+            </motion.span>
+          </motion.h2>
+        </motion.div>
+      </div>
+
+      {/* Regular desktop and mobile content */}
       <motion.div 
         className="w-full max-w-[1396px] max-md:max-w-full"
         variants={containerVariants}
@@ -191,7 +235,7 @@ export const Values = () => {
                 />
                 <div className="flex items-stretch gap-5 text-lg whitespace-nowrap leading-[1.4] justify-between relative z-10">
                   <motion.div 
-                    className="bg-[rgba(22,22,22,1)] rounded-[14px]"
+                    // className="bg-[rgba(22,22,22,1)] rounded-[14px]"
                     variants={iconBoxVariants}
                     whileHover={iconHoverVariants}
                   >
@@ -217,7 +261,7 @@ export const Values = () => {
                     </div>
                   </motion.div>
                   <motion.img
-                    src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/4a08f5d9e43e7e860f40f8823481a42f6d07555f?placeholderIfAbsent=true"
+                    src={green}
                     alt="Sustainability illustration"
                     className="aspect-[1] object-contain w-[81px] shrink-0 rounded-[50%]"
                     variants={imageVariants}
@@ -241,9 +285,9 @@ export const Values = () => {
             </motion.div>
           </motion.div>
 
-          {/* Center Values Section */}
+          {/* Center Values Section - Hidden on mobile */}
           <motion.div 
-            className="w-[33%] ml-5 max-md:w-full max-md:ml-0"
+            className="w-[33%] ml-5 max-md:hidden"
             variants={cardVariants}
             custom={1}
           >
@@ -274,7 +318,7 @@ export const Values = () => {
               </motion.div>
               
               <motion.h2 
-                className="text-[46px] leading-none tracking-[-1.32px] text-center self-center mt-[26px] max-md:text-[40px]"
+                className="text-[46px] leading-none tracking-[-1.32px] text-center self-center mt-[26px]"
                 variants={titleVariants}
                 whileHover={{ 
                   scale: 1.03,
@@ -295,7 +339,7 @@ export const Values = () => {
               </motion.h2>
               
               <motion.div 
-                className="overflow-hidden text-[rgba(122,122,122,1)] mt-[153px] rounded-[30px] max-md:mt-10"
+                className="overflow-hidden text-[rgba(122,122,122,1)] mt-[153px] rounded-[30px]"
                 variants={cardHoverVariants}
                 initial="rest"
                 whileHover="hover"
@@ -311,7 +355,7 @@ export const Values = () => {
                   />
                   <div className="flex items-stretch gap-5 text-lg whitespace-nowrap leading-[1.4] justify-between relative z-10">
                     <motion.div 
-                      className="bg-[rgba(22,22,22,1)] mt-1.5 rounded-[14px]"
+                      // className="bg-[rgba(22,22,22,1)] mt-1.5 rounded-[14px]"
                       variants={iconBoxVariants}
                       whileHover={iconHoverVariants}
                     >
@@ -337,7 +381,7 @@ export const Values = () => {
                       </div>
                     </motion.div>
                     <motion.img
-                      src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/febcf246383b845cc65ef2e11fe8aaad5104eade?placeholderIfAbsent=true"
+                      src={design}
                       alt="Customer Design illustration"
                       className="aspect-[1] object-contain w-[81px] shrink-0 rounded-[50%]"
                       variants={imageVariants}
@@ -359,6 +403,78 @@ export const Values = () => {
                 </motion.div>
               </motion.div>
             </div>
+          </motion.div>
+
+          {/* Customer-Design Card - Mobile only version */}
+          <motion.div 
+            className="hidden max-md:block w-full ml-0"
+            variants={cardVariants}
+            custom={1}
+          >
+            <motion.div 
+              className="self-stretch overflow-hidden text-[rgba(122,122,122,1)] font-normal tracking-[-0.18px] my-auto rounded-[30px] mt-10"
+              variants={cardHoverVariants}
+              initial="rest"
+              whileHover="hover"
+              animate={isVisible ? "rest" : "hidden"}
+            >
+              <motion.div 
+                className="border-neutral-800 border w-full pl-[15px] pr-[42px] pt-3.5 pb-[120px] rounded-[30px] border-solid max-md:pr-5 max-md:pb-[100px] relative"
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-[rgba(30,30,30,0.2)] to-transparent opacity-0"
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                />
+                <div className="flex items-stretch gap-5 text-lg whitespace-nowrap leading-[1.4] justify-between relative z-10">
+                  <motion.div 
+                    className="bg-[rgba(22,22,22,1)] mt-1.5 rounded-[14px]"
+                    variants={iconBoxVariants}
+                    whileHover={iconHoverVariants}
+                  >
+                    <div className="border-neutral-800 border flex items-stretch gap-3 px-5 py-4 rounded-[14px] border-solid">
+                      <motion.img
+                        src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/7e5339524f09ff37814ba185517b9051b74f7977?placeholderIfAbsent=true"
+                        alt="Customer Design icon"
+                        className="aspect-[0.84] object-contain w-[21px] shrink-0"
+                        whileHover={{ 
+                          scale: 1.2,
+                          transition: { duration: 0.3 }
+                        }}
+                      />
+                      <motion.div 
+                        className="grow shrink w-[147px]"
+                        whileHover={{ 
+                          color: "rgba(208,255,0,1)",
+                          transition: { duration: 0.2 }
+                        }}
+                      >
+                        Customer-Design
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                  <motion.img
+                    src={design}
+                    alt="Customer Design illustration"
+                    className="aspect-[1] object-contain w-[81px] shrink-0 rounded-[50%]"
+                    variants={imageVariants}
+                    whileHover={{ 
+                      scale: 1.1,
+                      boxShadow: "0px 0px 15px rgba(208,255,0,0.2)",
+                      transition: { duration: 0.3 }
+                    }}
+                  />
+                </div>
+                <motion.p 
+                  className="text-2xl leading-[25px] ml-[30px] mr-5 mt-[61px] max-md:mt-10 max-md:mb-2.5 max-md:mx-2.5 relative z-10"
+                  variants={paragraphVariants}
+                  whileHover={{ color: "rgba(150,150,150,1)" }}
+                >
+                  We design intuitive, future-ready technology that enhances
+                  efficiency and improves everyday life.
+                </motion.p>
+              </motion.div>
+            </motion.div>
           </motion.div>
 
           {/* Security Card */}
@@ -384,7 +500,7 @@ export const Values = () => {
                 />
                 <div className="flex items-stretch gap-5 text-lg leading-[1.4] justify-between relative z-10">
                   <motion.div 
-                    className="bg-[rgba(22,22,22,1)] rounded-[14px]"
+                    // className="bg-[rgba(22,22,22,1)] rounded-[14px]"
                     variants={iconBoxVariants}
                     whileHover={iconHoverVariants}
                   >
@@ -411,7 +527,7 @@ export const Values = () => {
                     </div>
                   </motion.div>
                   <motion.img
-                    src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/055fd489ac3ae91d5af606c83a9fd27b0b6338d8?placeholderIfAbsent=true"
+                    src={security}
                     alt="Security illustration"
                     className="aspect-[1] object-contain w-[81px] shrink-0 rounded-[50%]"
                     variants={imageVariants}

@@ -23,8 +23,8 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="bg-black flex flex-col md:flex-row rounded-lg max-sm:p-6 max-md:p-10 overflow-hidden">
-      <div className="flex flex-col md:flex-row w-full">
+    <section className="bg-black flex flex-col md:flex-row rounded-lg max-sm:p-6 max-md:p-10 overflow-hidden item">
+      <div className="flex flex-col md:flex-row w-full items-center justify-center">
         <div className="self-center flex flex-col max-md:max-w-full">
           <div className="bg-black flex max-w-full flex-col pb-[178px] px-20 rounded-[30px] max-md:px-5 max-md:py-[60px] max-md:pb-[80px]">
             <div className="w-[475px] max-w-full -mb-9 max-md:mb-2.5">

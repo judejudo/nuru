@@ -88,7 +88,7 @@ export const Mission = () => {
   };
 
   return (
-    <section className="bg-[rgba(13,13,13,1)] flex w-full flex-col items-center mt-[100px] pt-12 pb-[74px] px-[70px] max-md:max-w-full max-md:mt-10 max-md:px-5 overflow-hidden">
+    <section className="bg-[rgba(13,13,13,1)] flex w-full flex-col items-center md:mt-[100px] md:pt-12 pb-[74px] md:px-[70px] max-md:max-w-full max-md:mt-10 max-md:px-5 overflow-hidden">
       <motion.div 
         className="w-full max-w-[1513px] max-md:max-w-full"
         variants={containerVariants}
