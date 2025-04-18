@@ -5,7 +5,7 @@ import SocialIcons from "../common/SocialIcons";
 
 const ContactInfo = () => {
   return (
-    <div className="bg-[rgba(22,22,22,1)] border border-[rgba(38,38,38,1)] mt-[100px] rounded-2xl p-6 h-full">
+    <div className="bg-[rgba(22,22,22,1)] border border-[rgba(38,38,38,1)] mt-[100px] rounded-2xl p-6 ">
       <h2 className="text-2xl font-bold text-white mb-6">
         Contact Information
       </h2>
@@ -32,9 +32,9 @@ const ContactInfo = () => {
             <h3 className="text-[rgba(204,204,204,1)] font-medium">
               Phone
             </h3>
-            <p className="text-[rgba(122,122,122,1)]">+1 (800) 123-4567</p>
+            <p className="text-[rgba(122,122,122,1)]">+254 7584 44567</p>
             <p className="text-[rgba(122,122,122,1)]">
-              Mon-Fri, 9am-6pm EST
+              Mon-Fri, 9am-6pm EAT
             </p>
           </div>
         </div>
@@ -61,7 +61,7 @@ const ContactInfo = () => {
               Email
             </h3>
             <p className="text-[rgba(122,122,122,1)]">
-              support@nuruforge.com
+              contact@nuruforge.com
             </p>
             <p className="text-[rgba(122,122,122,1)]">
               We respond within 24 hours
@@ -69,41 +69,7 @@ const ContactInfo = () => {
           </div>
         </div>
 
-        {/* Address */}
-        <div className="flex items-start">
-          <div className="bg-[rgba(30,30,30,1)] p-3 rounded-full mr-4">
-            <svg
-              className="w-6 h-6 text-[rgba(208,255,0,1)]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-          </div>
-          <div>
-            <h3 className="text-[rgba(204,204,204,1)] font-medium">
-              Office
-            </h3>
-            <p className="text-[rgba(122,122,122,1)]">
-              123 Innovation Drive
-            </p>
-            <p className="text-[rgba(122,122,122,1)]">
-              Silicon Valley, CA 94025
-            </p>
-          </div>
-        </div>
+
       </div>
 
       {/* Social Media Links */}
