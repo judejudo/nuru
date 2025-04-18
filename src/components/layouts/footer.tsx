@@ -44,7 +44,7 @@ const Footer = () => {
         {/* Brand Name with animation */}
         <div className="flex justify-center mb-10 font-sansDoto overflow-hidden">
           <h1 
-            className={`text-6xl md:text-7xl lg:text-8xl font-extralight tracking-widest text-white 
+            className={`text-5xl md:text-7xl lg:text-8xl font-extralight tracking-widest text-white 
               ${glowing ? 'scale-105 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]' : 'text-gray-100'} 
               transition-all duration-1000 ease-in-out`}
           >
@@ -77,15 +77,11 @@ const Footer = () => {
             
             {/* Footer Links - with animated underlines */}
             <div className="flex flex-wrap justify-center gap-6 text-sm">
-              <a href="/contact" className="relative group text-gray-400 hover:text-white font-medium transition-colors">
-                Contact
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
-              </a>
-              <a href="/privacy" className="relative group text-gray-400 hover:text-white font-medium transition-colors">
+              <a href="" className="relative group text-gray-400 hover:text-white font-medium transition-colors">
                 Privacy & Cookie Policy
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
               </a>
-              <a href="/terms" className="relative group text-gray-400 hover:text-white font-medium transition-colors">
+              <a href="" className="relative group text-gray-400 hover:text-white font-medium transition-colors">
                 Terms & Conditions
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
               </a>

@@ -26,9 +26,13 @@ const Header = () => {
 
   return (
     <header className="relative flex justify-between bg-black items-center px-12 py-6 max-md:px-8 max-sm:px-5">
-      <div className="text-gray-300 text-4xl font-bold leading-tight tracking-tighter font-sansDoto max-sm:text-3xl">
-        Nuruforge
-      </div>
+      <Link to="/" className="flex items-center gap-2">
+        <div className="text-gray-300 text-4xl font-bold leading-tight tracking-tighter font-sansDoto max-sm:text-3xl">
+          Nuruforge
+        </div>
+      </Link>
+      
+      {/* Logo */}
       
       {/* Desktop Navigation */}
       <nav className="flex items-center bg-opacity-60 bg-neutral-900 backdrop-blur-sm border border-neutral-800 gap-10 px-8 py-5 rounded-full max-md:hidden">

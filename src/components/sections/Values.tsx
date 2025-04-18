@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import green from '@/assets/icons/green-technology.png';
 import security from '@/assets/icons/security.png';
 import design from '@/assets/icons/design.png';
+// Assuming we have a reliability icon - you'll need to import the actual icon
+import reliability from '@/assets/icons/shield.png';
+
 
 export const Values = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -82,6 +85,20 @@ export const Values = () => {
         delay: i * 0.2 + 0.3
       }
     })
+  };
+  
+  const topCardVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        type: "spring",
+        stiffness: 70,
+        damping: 14,
+        delay: 0.2
+      }
+    }
   };
   
   const iconBoxVariants = {
@@ -203,7 +220,7 @@ export const Values = () => {
           </motion.h2>
         </motion.div>
       </div>
-
+  
       {/* Regular desktop and mobile content */}
       <motion.div 
         className="w-full max-w-[1396px] max-md:max-w-full"
@@ -211,6 +228,78 @@ export const Values = () => {
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
       >
+        {/* Reliability Card - Above OUR VALUES on desktop, below OUR VALUES on mobile */}
+        <div className="flex justify-center mb-10 max-md:hidden">
+          <motion.div 
+            className="w-[33%]"
+            variants={topCardVariants}
+          >
+            <motion.div 
+              className="self-stretch overflow-hidden text-[rgba(122,122,122,1)] font-normal tracking-[-0.18px] my-auto rounded-[30px]"
+              variants={cardHoverVariants}
+              initial="rest"
+              whileHover="hover"
+              animate={isVisible ? "rest" : "hidden"}
+            >
+              <motion.div 
+                className="border-neutral-800 border w-full pl-[15px] pr-[45px] pt-[17px] pb-[120px] rounded-[30px] border-solid max-md:pr-5 max-md:pb-[100px] relative"
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-[rgba(30,30,30,0.2)] to-transparent opacity-0"
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                />
+                <div className="flex items-stretch gap-5 text-lg whitespace-nowrap leading-[1.4] justify-between relative z-10">
+                  <motion.div 
+                    variants={iconBoxVariants}
+                    whileHover={iconHoverVariants}
+                  >
+                    <div className="border-neutral-800 border flex items-stretch gap-2 px-5 py-4 rounded-[14px] border-solid">
+                      <motion.img
+                        src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/7e5339524f09ff37814ba185517b9051b74f7977?placeholderIfAbsent=true"
+                        alt="Reliability icon"
+                        className="aspect-[1] object-contain w-[25px] shrink-0"
+                        whileHover={{ 
+                          rotate: [0, 10, -10, 0],
+                          transition: { duration: 0.5 }
+                        }}
+                      />
+                      <motion.div 
+                        className="grow shrink w-[150px] my-auto"
+                        whileHover={{ 
+                          color: "rgba(208,255,0,1)",
+                          transition: { duration: 0.2 }
+                        }}
+                      >
+                        Reliability
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                  <motion.img
+                    src={reliability || security} // Fallback to security icon if reliability isn't available
+                    alt="Reliability illustration"
+                    className="aspect-[1] object-contain w-[81px] shrink-0 rounded-[50%]"
+                    variants={imageVariants}
+                    whileHover={{ 
+                      scale: 1.1,
+                      boxShadow: "0px 0px 15px rgba(208,255,0,0.2)",
+                      transition: { duration: 0.3 }
+                    }}
+                  />
+                </div>
+                <motion.p 
+                  className="text-2xl leading-[25px] ml-[30px] mr-[25px]  -mb-6 max-md:mt-10 max-md:mb-2.5 max-md:mx-2.5 relative z-10"
+                  variants={paragraphVariants}
+                  whileHover={{ color: "rgba(150,150,150,1)" }}
+                >
+                  We prioritize high-quality, durable solutions that our customers
+                  can depend on for seamless automation.
+                </motion.p>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+  
         <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
           {/* Sustainability Card */}
           <motion.div 
@@ -235,7 +324,6 @@ export const Values = () => {
                 />
                 <div className="flex items-stretch gap-5 text-lg whitespace-nowrap leading-[1.4] justify-between relative z-10">
                   <motion.div 
-                    // className="bg-[rgba(22,22,22,1)] rounded-[14px]"
                     variants={iconBoxVariants}
                     whileHover={iconHoverVariants}
                   >
@@ -273,7 +361,7 @@ export const Values = () => {
                   />
                 </div>
                 <motion.p 
-                  className="text-2xl leading-[25px] ml-[30px] mr-[25px] mt-[61px] -mb-6 max-md:mt-10 max-md:mb-2.5 max-md:mx-2.5 relative z-10"
+                  className="text-2xl leading-[25px] ml-[30px] mr-[25px]  -mb-6 max-md:mt-10 max-md:mb-2.5 max-md:mx-2.5 relative z-10"
                   variants={paragraphVariants}
                   whileHover={{ color: "rgba(150,150,150,1)" }}
                 >
@@ -284,7 +372,7 @@ export const Values = () => {
               </motion.div>
             </motion.div>
           </motion.div>
-
+  
           {/* Center Values Section - Hidden on mobile */}
           <motion.div 
             className="w-[33%] ml-5 max-md:hidden"
@@ -318,7 +406,7 @@ export const Values = () => {
               </motion.div>
               
               <motion.h2 
-                className="text-[46px] leading-none tracking-[-1.32px] text-center self-center mt-[26px]"
+                className="text-[46px] leading-none tracking-[-1.32px] text-center self-center "
                 variants={titleVariants}
                 whileHover={{ 
                   scale: 1.03,
@@ -339,7 +427,7 @@ export const Values = () => {
               </motion.h2>
               
               <motion.div 
-                className="overflow-hidden text-[rgba(122,122,122,1)] mt-[153px] rounded-[30px]"
+                className="overflow-hidden text-[rgba(122,122,122,1)] mt-[80px] rounded-[30px]"
                 variants={cardHoverVariants}
                 initial="rest"
                 whileHover="hover"
@@ -355,7 +443,6 @@ export const Values = () => {
                   />
                   <div className="flex items-stretch gap-5 text-lg whitespace-nowrap leading-[1.4] justify-between relative z-10">
                     <motion.div 
-                      // className="bg-[rgba(22,22,22,1)] mt-1.5 rounded-[14px]"
                       variants={iconBoxVariants}
                       whileHover={iconHoverVariants}
                     >
@@ -393,7 +480,7 @@ export const Values = () => {
                     />
                   </div>
                   <motion.p 
-                    className="text-2xl leading-[25px] mb-[-29px] ml-[30px] mr-5 mt-[89px] max-md:mt-10 max-md:mb-2.5 max-md:mx-2.5 relative z-10"
+                    className="text-2xl leading-[25px] mb-[-29px] ml-[30px] mr-5  max-md:mt-10 max-md:mb-2.5 max-md:mx-2.5 relative z-10"
                     variants={paragraphVariants}
                     whileHover={{ color: "rgba(150,150,150,1)" }}
                   >
@@ -404,7 +491,7 @@ export const Values = () => {
               </motion.div>
             </div>
           </motion.div>
-
+  
           {/* Customer-Design Card - Mobile only version */}
           <motion.div 
             className="hidden max-md:block w-full ml-0"
@@ -466,7 +553,7 @@ export const Values = () => {
                   />
                 </div>
                 <motion.p 
-                  className="text-2xl leading-[25px] ml-[30px] mr-5 mt-[61px] max-md:mt-10 max-md:mb-2.5 max-md:mx-2.5 relative z-10"
+                  className="text-2xl leading-[25px] ml-[30px] mr-5 max-md:mt-10 max-md:mb-2.5 max-md:mx-2.5 relative z-10"
                   variants={paragraphVariants}
                   whileHover={{ color: "rgba(150,150,150,1)" }}
                 >
@@ -476,7 +563,7 @@ export const Values = () => {
               </motion.div>
             </motion.div>
           </motion.div>
-
+  
           {/* Security Card */}
           <motion.div 
             className="w-[33%] ml-5 max-md:w-full max-md:ml-0"
@@ -500,7 +587,6 @@ export const Values = () => {
                 />
                 <div className="flex items-stretch gap-5 text-lg leading-[1.4] justify-between relative z-10">
                   <motion.div 
-                    // className="bg-[rgba(22,22,22,1)] rounded-[14px]"
                     variants={iconBoxVariants}
                     whileHover={iconHoverVariants}
                   >
@@ -539,7 +625,7 @@ export const Values = () => {
                   />
                 </div>
                 <motion.p 
-                  className="text-2xl leading-[25px] mb-[-27px] ml-[30px] mt-[71px] max-md:ml-2.5 max-md:mr-[3px] max-md:mt-10 max-md:mb-2.5 relative z-10"
+                  className="text-2xl leading-[25px] mb-[-27px] ml-[30px]  max-md:ml-2.5 max-md:mr-[3px] max-md:mt-10 max-md:mb-2.5 relative z-10"
                   variants={paragraphVariants}
                   whileHover={{ color: "rgba(150,150,150,1)" }}
                 >
@@ -550,9 +636,81 @@ export const Values = () => {
             </motion.div>
           </motion.div>
         </div>
+  
+        {/* Reliability Card - Mobile only version (appears after OUR VALUES) */}
+        <motion.div 
+          className="hidden max-md:block w-full mt-10"
+          variants={cardVariants}
+          custom={3}
+        >
+          <motion.div 
+            className="self-stretch overflow-hidden text-[rgba(122,122,122,1)] font-normal tracking-[-0.18px] my-auto rounded-[30px]"
+            variants={cardHoverVariants}
+            initial="rest"
+            whileHover="hover"
+            animate={isVisible ? "rest" : "hidden"}
+          >
+            <motion.div 
+              className="border-neutral-800 border w-full pl-[15px] pr-[45px] pt-[17px] pb-[120px] rounded-[30px] border-solid max-md:pr-5 max-md:pb-[100px] relative"
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-[rgba(30,30,30,0.2)] to-transparent opacity-0"
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              />
+              <div className="flex items-stretch gap-5 text-lg whitespace-nowrap leading-[1.4] justify-between relative z-10">
+                <motion.div 
+                  className="bg-[rgba(22,22,22,1)] rounded-[14px]"
+                  variants={iconBoxVariants}
+                  whileHover={iconHoverVariants}
+                >
+                  <div className="border-neutral-800 border flex items-stretch gap-2 px-5 py-4 rounded-[14px] border-solid">
+                    <motion.img
+                      src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/7e5339524f09ff37814ba185517b9051b74f7977?placeholderIfAbsent=true"
+                      alt="Reliability icon"
+                      className="aspect-[1] object-contain w-[25px] shrink-0"
+                      whileHover={{ 
+                        rotate: [0, 10, -10, 0],
+                        transition: { duration: 0.5 }
+                      }}
+                    />
+                    <motion.div 
+                      className="grow shrink w-[150px] my-auto"
+                      whileHover={{ 
+                        color: "rgba(208,255,0,1)",
+                        transition: { duration: 0.2 }
+                      }}
+                    >
+                      Reliability
+                    </motion.div>
+                  </div>
+                </motion.div>
+                <motion.img
+                  src={reliability || security} // Fallback to security icon if reliability isn't available
+                  alt="Reliability illustration"
+                  className="aspect-[1] object-contain w-[81px] shrink-0 rounded-[50%]"
+                  variants={imageVariants}
+                  whileHover={{ 
+                    scale: 1.1,
+                    boxShadow: "0px 0px 15px rgba(208,255,0,0.2)",
+                    transition: { duration: 0.3 }
+                  }}
+                />
+              </div>
+              <motion.p 
+                className="text-2xl leading-[25px] ml-[30px] mr-[25px]  mb-6 max-md:mt-10 max-md:mb-2.5 max-md:mx-2.5 relative z-10"
+                variants={paragraphVariants}
+                whileHover={{ color: "rgba(150,150,150,1)" }}
+              >
+                We prioritize high-quality, durable solutions that our customers
+                can depend on for seamless automation.
+              </motion.p>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </motion.div>
     </section>
   );
-};
+}
 
 export default Values;
