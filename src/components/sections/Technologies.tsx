@@ -5,9 +5,12 @@ import zed from "@/assets/technologies/idl5Z2fp7B_1743261125046.png"
 import freescale from "@/assets/technologies/freescale-semiconductor-seeklogo.png"
 import alexa from "@/assets/technologies/alexa-amazon-seeklogo.png"
 import wifi from "@/assets/technologies/wifi-seeklogo.png"
-import smartthings from  "@/assets/technologies/idH1ONUL3r_1743261094762.png"
-import bluetooth from "@/assets/technologies/image 2.png"
-import matter from "@/assets/technologies/image 8.png"
+import smartthings from  "@/assets/technologies/home_assistant.png"
+import bluetooth from "@/assets/technologies/bluetooth-seeklogo.png"
+import matter from "@/assets/technologies/matter.png"
+import googleHome from "@/assets/technologies/google-home-seeklogo.png"
+import wirelessProtocol from "@/assets/technologies/wireless protocol.png"
+import homekit from "@/assets/technologies/homekit.png"
 
 
 export const Technologies = () => {
@@ -18,7 +21,10 @@ export const Technologies = () => {
   // This is a placeholder that would be replaced with your actual logos
   const logos = [
     wave,
+    homekit,
     freescale,
+    googleHome,
+    wirelessProtocol,
     alexa,
     zed,
     wifi,

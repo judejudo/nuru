@@ -434,7 +434,7 @@ export const Values = () => {
                   >
                     <div className="border-neutral-800 border flex items-stretch gap-3 px-5 py-4 rounded-[14px] border-solid">
                       <motion.img
-                        src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/7e5339524f09ff37814ba185517b9051b74f7977?placeholderIfAbsent=true"
+                        src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/1c241eedb878c53864a6b8b1e433c0ec21aa92ad?placeholderIfAbsent=true"
                         alt="Customer Design icon"
                         className="aspect-[0.84] object-contain w-[21px] shrink-0"
                         whileHover={{ 

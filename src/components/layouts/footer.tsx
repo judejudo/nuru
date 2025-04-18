@@ -1,5 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Instagram, Twitter, Youtube, Linkedin, Facebook } from 'lucide-react';
+
+// Import custom icons
+import facebook from "@/assets/icons/facebook.png";
+import linkedin from "@/assets/icons/linkedin.png";
+import instagram from "@/assets/icons/instagram.png";
+import telegram from "@/assets/icons/telegram.png";
+import mastodon from "@/assets/icons/mastodon.png";
+import bluesky from "@/assets/icons/bluesky.png";
+import threads from "@/assets/icons/threads.png";
+import tiktok from "@/assets/icons/tiktok.png";
+import youtube from "@/assets/icons/youtube.png";
+import x from "@/assets/icons/x.png";
 
 const Footer = () => {
   const [glowing, setGlowing] = useState(false);
@@ -12,6 +23,20 @@ const Footer = () => {
     
     return () => clearInterval(interval);
   }, []);
+
+  // Social media links data
+  const socialLinks = [
+    { name: 'Instagram', icon: instagram, url: 'https://instagram.com/nuruforge' },
+    { name: 'TikTok', icon: tiktok, url: 'https://tiktok.com/@nuruforge' },
+    { name: 'X', icon: x, url: 'https://twitter.com/nuruforge' },
+    { name: 'YouTube', icon: youtube, url: 'https://youtube.com/@nuruforge' },
+    { name: 'Threads', icon: threads, url: 'https://threads.net/@nuruforge' },
+    { name: 'Telegram', icon: telegram, url: 'https://t.me/nuruforge' },
+    { name: 'LinkedIn', icon: linkedin, url: 'https://linkedin.com/company/nuruforge' },
+    { name: 'Facebook', icon: facebook, url: 'https://facebook.com/nuruforge' },
+    { name: 'Mastodon', icon: mastodon, url: 'https://mastodon.social/@nuruforge' },
+    { name: 'Bluesky', icon: bluesky, url: 'https://bsky.app/profile/nuruforge' }
+  ];
 
   return (
     <footer className="bg-black text-white py-12">
@@ -30,100 +55,27 @@ const Footer = () => {
         <div className="max-w-5xl mx-auto">
           {/* Two-column layout for small screens, single row for larger screens */}
           <div className="flex flex-col md:flex-row justify-between items-center mb-10">
-            {/* Social Media Icons - Now with hover animations */}
+            {/* Social Media Icons with custom images */}
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-8 md:mb-0">
-              <a href="https://instagram.com/nuruforge" className="group transform hover:scale-110 transition-transform duration-300">
-                <div className="bg-gray-900 p-3 rounded-full group-hover:bg-gray-800 transition-colors shadow-lg">
-                  <Instagram size={20} className="text-gray-300 group-hover:text-white transition-colors" />
-                </div>
-              </a>
-              
-              <a href="https://tiktok.com/@nuruforge" className="group transform hover:scale-110 transition-transform duration-300">
-                <div className="bg-gray-900 p-3 rounded-full group-hover:bg-gray-800 transition-colors shadow-lg">
-                  <svg 
-                    viewBox="0 0 24 24" 
-                    width="20" 
-                    height="20" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    fill="none"
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                    className="text-gray-300 group-hover:text-white transition-colors"
-                  >
-                    <path d="M9 12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
-                    <path d="M15 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
-                    <path d="M15 8v8a4 4 0 0 1-4 4H5a4 4 0 0 1-4-4V5a4 4 0 0 1 4-4h8"/>
-                  </svg>
-                </div>
-              </a>
-              
-              <a href="https://twitter.com/nuruforge" className="group transform hover:scale-110 transition-transform duration-300">
-                <div className="bg-gray-900 p-3 rounded-full group-hover:bg-gray-800 transition-colors shadow-lg">
-                  <Twitter size={20} className="text-gray-300 group-hover:text-white transition-colors" />
-                </div>
-              </a>
-              
-              <a href="https://youtube.com/@nuruforge" className="group transform hover:scale-110 transition-transform duration-300">
-                <div className="bg-gray-900 p-3 rounded-full group-hover:bg-gray-800 transition-colors shadow-lg">
-                  <Youtube size={20} className="text-gray-300 group-hover:text-white transition-colors" />
-                </div>
-              </a>
-              
-              <a href="https://threads.net/@nuruforge" className="group transform hover:scale-110 transition-transform duration-300">
-                <div className="bg-gray-900 p-3 rounded-full group-hover:bg-gray-800 transition-colors shadow-lg">
-                  {/* Custom Threads icon */}
-                  <svg 
-                    width="20" 
-                    height="20" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                    className="text-gray-300 group-hover:text-white transition-colors"
-                  >
-                    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/>
-                    <path d="M12 6v12"/>
-                    <path d="M6 12h12"/>
-                  </svg>
-                </div>
-              </a>
-              
-              <a href="https://t.me/nuruforge" className="group transform hover:scale-110 transition-transform duration-300">
-                <div className="bg-gray-900 p-3 rounded-full group-hover:bg-gray-800 transition-colors shadow-lg">
-                  {/* Custom Telegram icon */}
-                  <svg 
-                    width="20" 
-                    height="20" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                    className="text-gray-300 group-hover:text-white transition-colors"
-                  >
-                    <path d="M21.5 4.5L2.5 12.5l5 2 10-7-7 9 2 5 5-14"/>
-                  </svg>
-                </div>
-              </a>
-              
-              <a href="https://linkedin.com/company/nuruforge" className="group transform hover:scale-110 transition-transform duration-300">
-                <div className="bg-gray-900 p-3 rounded-full group-hover:bg-gray-800 transition-colors shadow-lg">
-                  <Linkedin size={20} className="text-gray-300 group-hover:text-white transition-colors" />
-                </div>
-              </a>
-              
-              <a href="https://facebook.com/nuruforge" className="group transform hover:scale-110 transition-transform duration-300">
-                <div className="bg-gray-900 p-3 rounded-full group-hover:bg-gray-800 transition-colors shadow-lg">
-                  <Facebook size={20} className="text-gray-300 group-hover:text-white transition-colors" />
-                </div>
-              </a>
+              {socialLinks.map((social) => (
+                <a 
+                  key={social.name} 
+                  href={social.url} 
+                  className="group transform hover:scale-110 transition-transform duration-300"
+                  aria-label={social.name}
+                >
+                  <div className="bg-gray-900 p-3 rounded-full group-hover:bg-gray-800 transition-colors shadow-lg flex items-center justify-center">
+                    <img 
+                      src={social.icon} 
+                      alt={`${social.name} icon`} 
+                      className="w-9 object-contain filter brightness-75 group-hover:brightness-100 transition-all"
+                    />
+                  </div>
+                </a>
+              ))}
             </div>
             
-            {/* Footer Links - Now with animated underlines */}
+            {/* Footer Links - with animated underlines */}
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               <a href="/contact" className="relative group text-gray-400 hover:text-white font-medium transition-colors">
                 Contact
