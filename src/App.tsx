@@ -31,7 +31,6 @@ const App = () => (
             <Route path="/blogs" element={<BlogsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/blogs/:slug" element={<BlogDetailPage />} />
-            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />

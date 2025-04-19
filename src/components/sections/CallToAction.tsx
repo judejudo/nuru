@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { EmailInput } from "../ui/EmailInput";
 
 export const CallToAction = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -148,7 +149,8 @@ export const CallToAction = () => {
         variants={containerVariants}
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
-        {...shadowPulse}
+        initial={shadowPulse.initial}
+        animate={shadowPulse.animate}
       >
         {/* Background gradient for the CTA box */}
         <motion.div
@@ -210,61 +212,23 @@ export const CallToAction = () => {
             </motion.span>
           </motion.div>
 
-          <motion.div className="mt-12 w-full" variants={itemVariants}>
+          <motion.div className="mt-12 w-full flex justify-center" variants={itemVariants}>
+            {/* EmailInput component wrapped in motion div for animations */}
             <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="w-full flex justify-center"
             >
-              {/* Custom Email Input Component */}
-              <div className="flex w-full max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="flex-grow bg-[rgba(30,30,30,0.9)] border border-[rgba(38,38,38,1)] text-[rgba(204,204,204,1)] rounded-l-md py-3 px-4 outline-none focus:border-[rgba(208,255,0,0.5)] transition-colors"
-                />
-                <button className="bg-[rgba(208,255,0,0.9)] hover:bg-[rgba(208,255,0,1)] text-[rgba(13,13,13,1)] font-medium py-3 px-6 rounded-r-md transition-colors">
-                  Subscribe
-                </button>
-              </div>
+              <EmailInput />
             </motion.div>
           </motion.div>
 
-          {/* Added: Benefits list */}
+          {/* Benefits list */}
           <motion.div
             className="flex justify-center gap-8 mt-10 w-full"
             variants={itemVariants}
           >
-            {/* <motion.div
-              className="flex items-center"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            >
-              <motion.div
-                className="w-5 h-5 rounded-full bg-[rgba(208,255,0,0.8)] mr-2 flex items-center justify-center"
-                whileHover={{ backgroundColor: "rgba(208,255,0,1)" }}
-              >
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M20 6L9 17L4 12"
-                    stroke="rgba(13,13,13,1)"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </motion.div>
-              <span className="text-[rgba(180,180,180,1)] text-sm">
-                Free Consultation
-              </span>
-            </motion.div> */}
-
             <motion.div
               className="flex items-center"
               whileHover={{ scale: 1.05 }}
@@ -326,7 +290,7 @@ export const CallToAction = () => {
             </motion.div>
           </motion.div>
 
-          {/* Added: Subtle trust indicator */}
+          {/* Subtle trust indicator */}
           <motion.div
             className="mt-12 text-center text-[rgba(122,122,122,1)] text-xs"
             initial={{ opacity: 0 }}

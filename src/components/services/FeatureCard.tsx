@@ -93,7 +93,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
 
   return (
     <motion.div 
-      className="flex flex-col bg-[linear-gradient(180deg,#1E1E1E_0%,#141414_100%)] border border-neutral-800 p-5 rounded-[30px] overflow-hidden h-full"
+      className="flex flex-col bg-[linear-gradient(180deg,#1E1E1E_0%,#141414_100%)] border border-neutral-800 p-3 md:p-5 rounded-[20px] md:rounded-[30px] overflow-hidden h-full"
       initial="initial"
       animate="animate"
       whileHover="hover"
@@ -103,22 +103,23 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
     >
       {/* Animated background gradient overlay */}
       <motion.div 
-        className="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(208,255,0,0.03)] opacity-0 rounded-[30px]"
+        className="absolute inset-0 bg-gradient-to-b from-transparent to-[rgba(208,255,0,0.03)] opacity-0 rounded-[20px] md:rounded-[30px]"
         animate={{ opacity: isHovered ? 1 : 0 }}
         transition={{ duration: 0.5 }}
       />
 
       {/* Title bar with icon */}
       <motion.div 
-        className="flex items-center bg-[#161616] border border-neutral-800 gap-3 p-4 rounded-[14px] relative z-10"
+        className="flex items-center bg-[#161616] border border-neutral-800 gap-2 md:gap-3 p-3 md:p-4 rounded-[10px] md:rounded-[14px] relative z-10"
         variants={titleBarVariants}
       >
         <motion.div 
           variants={iconVariants}
           dangerouslySetInnerHTML={{ __html: icon }} 
+          className="w-5 md:w-auto"
         />
         <motion.div 
-          className="text-[#7A7A7A] text-lg font-normal leading-[25.2px] tracking-[-0.18px]"
+          className="text-[#7A7A7A] text-base md:text-lg font-normal leading-[22px] md:leading-[25.2px] tracking-[-0.18px]"
           variants={textVariants}
         >
           {title}
@@ -126,11 +127,11 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
       </motion.div>
 
       {/* Image container with animation */}
-      <div className="relative overflow-hidden rounded-[30px] my-[20px] h-[195px]">
+      <div className="relative overflow-hidden rounded-[20px] md:rounded-[30px] my-[15px] md:my-[20px] h-[140px] md:h-[195px]">
         <motion.img
           src={imageSrc}
           alt={imageAlt}
-          className="w-full h-full object-cover rounded-[30px]"
+          className="w-full h-full object-cover rounded-[20px] md:rounded-[30px]"
           variants={imageVariants}
         />
         {/* Overlay gradient on hover */}
@@ -143,7 +144,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
 
       {/* Description text */}
       <motion.div 
-        className="text-[#7A7A7A] text-center text-2xl font-normal leading-[25.2px] tracking-[-0.18px] relative z-10 flex-grow"
+        className="text-[#7A7A7A] text-center text-lg md:text-2xl font-normal leading-[22px] md:leading-[25.2px] tracking-[-0.18px] relative z-10 flex-grow"
         variants={textVariants}
       >
         {description}
@@ -151,7 +152,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
 
       {/* Accent line at bottom */}
       <motion.div 
-        className="h-[3px] w-0 bg-[rgba(208,255,0,0.3)] rounded-full mt-4 mx-auto"
+        className="h-[2px] md:h-[3px] w-0 bg-[rgba(208,255,0,0.3)] rounded-full mt-3 md:mt-4 mx-auto"
         animate={{ width: isHovered ? '40%' : '0%' }}
         transition={{ duration: 0.4, ease: "easeOut" }}
       />

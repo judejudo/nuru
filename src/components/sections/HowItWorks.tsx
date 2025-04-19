@@ -126,16 +126,16 @@ export const HowItWorks = () => {
   return (
     <section 
       id="how-it-works-section"
-      className="bg-[rgba(13,13,13,1)] flex w-full flex-col items-center justify-center mt-36 px-20 py-24 max-md:max-w-full max-md:mt-10 max-md:px-5 overflow-hidden"
+      className="bg-[rgba(13,13,13,1)] flex w-full flex-col items-center justify-center mt-36 px-6 sm:px-10 md:px-20 py-16 sm:py-20 md:py-24 max-w-full max-md:mt-10 overflow-hidden"
     >
       <motion.div 
-        className="flex w-[1280px] max-w-full flex-col items-center"
+        className="flex w-full max-w-[1280px] flex-col items-center"
         variants={containerVariants}
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
       >
         <motion.div 
-          className="flex w-[159px] max-w-full items-stretch gap-[9px] text-lg text-[rgba(208,255,0,1)] font-normal tracking-[-0.18px] leading-[1.4]"
+          className="flex w-full max-w-[159px] items-stretch gap-[9px] text-lg text-[rgba(208,255,0,1)] font-normal tracking-[-0.18px] leading-[1.4]"
           variants={itemVariants}
         >
           <motion.img
@@ -159,7 +159,7 @@ export const HowItWorks = () => {
         </motion.div>
         
         <motion.h2 
-          className="text-[44px] font-normal leading-[53px] tracking-[-1.32px] text-center ml-[93px] mt-[19px] max-md:max-w-full max-md:ml-0"
+          className="text-2xl sm:text-3xl md:text-[44px] font-normal leading-tight sm:leading-[1.2] md:leading-[53px] tracking-[-1px] md:tracking-[-1.32px] text-center mt-5 md:mt-[19px] max-w-full px-4"
           variants={titleVariants}
         >
           <motion.span
@@ -173,23 +173,23 @@ export const HowItWorks = () => {
           </motion.span>
         </motion.h2>
         
-        <div className="self-stretch mt-[61px] max-md:max-w-full max-md:mt-10">
-          <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
+        <div className="self-stretch mt-12 sm:mt-14 md:mt-[61px] w-full">
+          <div className="gap-4 sm:gap-5 flex flex-col sm:flex-row flex-wrap justify-center">
             {/* Card 1 */}
             <motion.div 
-              className="w-[33%] max-md:w-full max-md:ml-0"
+              className="w-full sm:w-[48%] md:w-[32%]"
               variants={cardVariants}
               custom={0}
             >
               <motion.div 
-                className="bg-[rgba(22,22,22,1)] grow font-normal w-full rounded-3xl max-md:mt-8 overflow-hidden"
+                className="bg-[rgba(22,22,22,1)] grow font-normal w-full rounded-3xl overflow-hidden h-full"
                 variants={cardHoverVariants}
                 initial="rest"
                 whileHover="hover"
                 animate={isVisible ? "rest" : "hidden"}
               >
                 <motion.div 
-                  className="border-neutral-800 border flex flex-col pl-8 pr-[67px] py-[43px] rounded-3xl border-solid max-md:px-5 relative"
+                  className="border-neutral-800 border flex flex-col p-6 sm:p-7 md:pl-8 md:pr-8 md:py-[43px] rounded-3xl border-solid relative h-full"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-[rgba(30,30,30,0.3)] to-transparent opacity-0"
@@ -200,7 +200,7 @@ export const HowItWorks = () => {
                   <motion.img
                     src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/dd91d38e47fac750bb5081c6481dfaa14edc2f04?placeholderIfAbsent=true"
                     alt="Vision icon"
-                    className="aspect-[1] object-contain w-[100px] max-w-full relative z-10"
+                    className="aspect-[1] object-contain w-20 sm:w-24 md:w-[100px] max-w-full relative z-10"
                     variants={iconVariants}
                     whileHover={{ 
                       rotate: [0, -5, 5, -5, 0],
@@ -209,7 +209,7 @@ export const HowItWorks = () => {
                   />
                   
                   <motion.h3 
-                    className="text-[rgba(204,204,204,1)] text-[26px] leading-[1.2] tracking-[-0.52px] mt-[62px] max-md:mt-10 relative z-10"
+                    className="text-[rgba(204,204,204,1)] text-xl sm:text-2xl md:text-[26px] leading-[1.2] tracking-[-0.52px] mt-8 sm:mt-10 md:mt-[62px] relative z-10"
                     variants={textGlowVariants}
                     whileHover="hover"
                   >
@@ -217,7 +217,7 @@ export const HowItWorks = () => {
                   </motion.h3>
                   
                   <motion.p 
-                    className="text-[rgba(122,122,122,1)] text-lg leading-[25px] tracking-[-0.18px] mt-[23px] relative z-10"
+                    className="text-[rgba(122,122,122,1)] text-base sm:text-lg leading-[1.5] sm:leading-[25px] tracking-[-0.18px] mt-4 md:mt-[23px] relative z-10"
                     whileHover={{ color: "rgba(150,150,150,1)" }}
                   >
                     "Choose a plan and share your smart home project details
@@ -229,19 +229,19 @@ export const HowItWorks = () => {
 
             {/* Card 2 */}
             <motion.div 
-              className="w-[33%] ml-5 max-md:w-full max-md:ml-0"
+              className="w-full sm:w-[48%] md:w-[32%] mt-4 sm:mt-0"
               variants={cardVariants}
               custom={1}
             >
               <motion.div 
-                className="bg-[rgba(22,22,22,1)] grow font-normal w-full rounded-3xl max-md:mt-8 overflow-hidden"
+                className="bg-[rgba(22,22,22,1)] grow font-normal w-full rounded-3xl overflow-hidden h-full"
                 variants={cardHoverVariants}
                 initial="rest"
                 whileHover="hover"
                 animate={isVisible ? "rest" : "hidden"}
               >
                 <motion.div 
-                  className="border-neutral-800 border flex flex-col px-8 py-12 rounded-3xl border-solid max-md:px-5 relative"
+                  className="border-neutral-800 border flex flex-col p-6 sm:p-7 md:px-8 md:py-12 rounded-3xl border-solid relative h-full"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-[rgba(30,30,30,0.3)] to-transparent opacity-0"
@@ -252,7 +252,7 @@ export const HowItWorks = () => {
                   <motion.img
                     src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/a1832d97db4333897e0aef9d54048391e983f32f?placeholderIfAbsent=true"
                     alt="Innovation icon"
-                    className="aspect-[1] object-contain w-[100px] max-w-full relative z-10"
+                    className="aspect-[1] object-contain w-20 sm:w-24 md:w-[100px] max-w-full relative z-10"
                     variants={iconVariants}
                     whileHover={{ 
                       scale: 1.1,
@@ -261,7 +261,7 @@ export const HowItWorks = () => {
                   />
                   
                   <motion.h3 
-                    className="text-[rgba(204,204,204,1)] text-[26px] leading-[1.2] tracking-[-0.52px] mt-[61px] max-md:mt-10 relative z-10"
+                    className="text-[rgba(204,204,204,1)] text-xl sm:text-2xl md:text-[26px] leading-[1.2] tracking-[-0.52px] mt-8 sm:mt-10 md:mt-[61px] relative z-10"
                     variants={textGlowVariants}
                     whileHover="hover"
                   >
@@ -269,7 +269,7 @@ export const HowItWorks = () => {
                   </motion.h3>
                   
                   <motion.p 
-                    className="text-[rgba(122,122,122,1)] text-lg leading-[25px] tracking-[-0.18px] self-stretch mt-[15px] relative z-10"
+                    className="text-[rgba(122,122,122,1)] text-base sm:text-lg leading-[1.5] sm:leading-[25px] tracking-[-0.18px] self-stretch mt-4 md:mt-[15px] relative z-10"
                     whileHover={{ color: "rgba(150,150,150,1)" }}
                   >
                     "Sit back while our expert AIoT designers bring your
@@ -281,19 +281,19 @@ export const HowItWorks = () => {
 
             {/* Card 3 */}
             <motion.div 
-              className="w-[33%] ml-5 max-md:w-full max-md:ml-0"
+              className="w-full sm:w-[48%] md:w-[32%] mt-4 md:mt-0"
               variants={cardVariants}
               custom={2}
             >
               <motion.div 
-                className="bg-[rgba(22,22,22,1)] grow font-normal w-full rounded-3xl max-md:mt-8 overflow-hidden"
+                className="bg-[rgba(22,22,22,1)] grow font-normal w-full rounded-3xl overflow-hidden h-full"
                 variants={cardHoverVariants}
                 initial="rest"
                 whileHover="hover"
                 animate={isVisible ? "rest" : "hidden"}
               >
                 <motion.div 
-                  className="border-neutral-800 border flex flex-col pl-8 pr-[72px] py-[41px] rounded-3xl border-solid max-md:px-5 relative"
+                  className="border-neutral-800 border flex flex-col p-6 sm:p-7 md:pl-8 md:pr-8 md:py-[41px] rounded-3xl border-solid relative h-full"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-[rgba(30,30,30,0.3)] to-transparent opacity-0"
@@ -304,7 +304,7 @@ export const HowItWorks = () => {
                   <motion.img
                     src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/f4b362048335b8f5b46276f4584b2936d317e12b?placeholderIfAbsent=true"
                     alt="Support icon"
-                    className="aspect-[1] object-contain w-[100px] max-w-full relative z-10"
+                    className="aspect-[1] object-contain w-20 sm:w-24 md:w-[100px] max-w-full relative z-10"
                     variants={iconVariants}
                     whileHover={{ 
                       rotate: [0, 10, -10, 5, 0],
@@ -313,7 +313,7 @@ export const HowItWorks = () => {
                   />
                   
                   <motion.h3 
-                    className="text-[rgba(204,204,204,1)] text-[26px] leading-[1.2] tracking-[-0.52px] mt-[62px] max-md:mt-10 relative z-10"
+                    className="text-[rgba(204,204,204,1)] text-xl sm:text-2xl md:text-[26px] leading-[1.2] tracking-[-0.52px] mt-8 sm:mt-10 md:mt-[62px] relative z-10"
                     variants={textGlowVariants}
                     whileHover="hover"
                   >
@@ -321,7 +321,7 @@ export const HowItWorks = () => {
                   </motion.h3>
                   
                   <motion.p 
-                    className="text-[rgba(122,122,122,1)] text-lg leading-[25px] tracking-[-0.18px] mt-[21px] relative z-10"
+                    className="text-[rgba(122,122,122,1)] text-base sm:text-lg leading-[1.5] sm:leading-[25px] tracking-[-0.18px] mt-4 md:mt-[21px] relative z-10"
                     whileHover={{ color: "rgba(150,150,150,1)" }}
                   >
                     "Your subscription ensures you have continuous access to our

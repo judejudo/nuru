@@ -1,6 +1,11 @@
+// FRONTEND CODE
 // src/components/contact/ContactForm.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import axios from "axios"; // Make sure axios is installed
+
+// The server URL - use environment variable if available
+const SERVER_URL = import.meta.env.VITE_SERVER_URL || 'http://localhost:5000';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +19,7 @@ const ContactForm = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -62,16 +68,27 @@ const ContactForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitError("");
     
     if (validateForm()) {
       setIsSubmitting(true);
       
-      // Simulate form submission with a delay
-      setTimeout(() => {
-        // In a real app, you would send the data to your server here
-        console.log("Form submitted:", formData);
+      try {
+        // Send the form data to your Express server
+        await axios.post(`${SERVER_URL}/api/contact`, {
+          ...formData,
+          notifyEmail: 'contact@nuruforge.com' // The email that will receive the notification
+        });
+        
+        // If the form submission includes the subscribe option, also send to subscribe endpoint
+        if (formData.subscribe) {
+          await axios.post(`${SERVER_URL}/api/subscribe`, {
+            subscriberEmail: formData.email,
+            notifyEmail: 'contact@nuruforge.com'
+          });
+        }
         
         setIsSubmitting(false);
         setSubmitSuccess(true);
@@ -88,7 +105,11 @@ const ContactForm = () => {
           });
           setSubmitSuccess(false);
         }, 5000);
-      }, 1500);
+      } catch (error) {
+        console.error("Form submission error:", error);
+        setIsSubmitting(false);
+        setSubmitError("Failed to send your message. Please try again later.");
+      }
     }
   };
 
@@ -115,6 +136,12 @@ const ContactForm = () => {
         </motion.div>
       ) : (
         <form onSubmit={handleSubmit}>
+          {submitError && (
+            <div className="bg-red-900/30 border border-red-500/50 text-red-200 p-3 rounded-lg mb-6">
+              {submitError}
+            </div>
+          )}
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             {/* Name field */}
             <div>
@@ -316,3 +343,15 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
+// ----------------------------------------------------------------------------------
+// FRONTEND EMAIL INPUT COMPONENT
+// src/components/ui/EmailInput.jsx
+// ----------------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------------
+// BACKEND EXPRESS SERVER
+// server/index.js
+// ----------------------------------------------------------------------------------
+

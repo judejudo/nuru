@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import axios from "axios"; // You'll need to install axios
+import axios from "axios"; // Make sure to install axios
+
+// The server URL - use environment variable if available
+const SERVER_URL = import.meta.env.VITE_SERVER_URL || 'http://localhost:5000';
 
 export const EmailInput = () => {
   const [email, setEmail] = useState("");
@@ -27,8 +30,8 @@ export const EmailInput = () => {
         message: "Submitting...",
       });
 
-      // Call your API endpoint
-      await axios.post('/api/subscribe', {
+      // Send the data to your Express server
+      await axios.post(`${SERVER_URL}/api/subscribe`, {
         subscriberEmail: email,
         notifyEmail: 'contact@nuruforge.com'
       });
@@ -38,6 +41,14 @@ export const EmailInput = () => {
         message: "Thank you for subscribing!",
       });
       setEmail("");
+      
+      // Reset status message after 3 seconds
+      setTimeout(() => {
+        setStatus({
+          type: null,
+          message: "",
+        });
+      }, 3000);
       
     } catch (error) {
       console.error("Subscription error:", error);

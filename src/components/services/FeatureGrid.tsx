@@ -90,16 +90,16 @@ export const FeatureGrid: React.FC = () => {
   };
 
   return (
-    <section id="feature-grid-section" className="relative overflow-hidden">
+    <section id="feature-grid-section" className="relative overflow-hidden py-10 md:py-16">
       {/* Decorative background elements */}
       <motion.div 
-        className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-[rgba(208,255,0,0.02)] blur-3xl"
+        className="absolute -top-20 -right-20 w-48 md:w-64 h-48 md:h-64 rounded-full bg-[rgba(208,255,0,0.02)] blur-3xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: isVisible ? 0.5 : 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       />
       <motion.div 
-        className="absolute -bottom-32 -left-20 w-72 h-72 rounded-full bg-[rgba(208,255,0,0.01)] blur-3xl"
+        className="absolute -bottom-32 -left-20 w-56 md:w-72 h-56 md:h-72 rounded-full bg-[rgba(208,255,0,0.01)] blur-3xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: isVisible ? 0.4 : 0 }}
         transition={{ duration: 1, delay: 0.8 }}
@@ -107,13 +107,13 @@ export const FeatureGrid: React.FC = () => {
       
       {/* Section header with animations */}
       <motion.div 
-        className="text-center mb-16"
+        className="text-center mb-8 md:mb-12 lg:mb-16 px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h2 
-          className="text-4xl sm:text-5xl font-medium text-[rgba(204,204,204,1)]"
+          className="text-3xl md:text-4xl lg:text-5xl font-medium text-[rgba(204,204,204,1)]"
           animate={{ 
             color: ["rgba(204,204,204,1)", "rgba(230,230,230,1)", "rgba(204,204,204,1)"]
           }}
@@ -122,7 +122,7 @@ export const FeatureGrid: React.FC = () => {
 
         </motion.h2>
         <motion.p 
-          className="text-[rgba(122,122,122,1)] max-w-2xl mx-auto mt-4"
+          className="text-[rgba(122,122,122,1)] max-w-xl md:max-w-2xl mx-auto mt-3 md:mt-4 text-sm md:text-base"
           initial={{ opacity: 0 }}
           animate={{ opacity: isVisible ? 1 : 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -133,7 +133,7 @@ export const FeatureGrid: React.FC = () => {
       
       {/* Feature grid with staggered animations and equal height cards */}
       <motion.div 
-        className="grid grid-cols-4 gap-5 px-[60px] max-md:grid-cols-2 max-md:px-[30px] max-sm:grid-cols-1 max-sm:px-5"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[60px]"
         variants={containerVariants}
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
@@ -155,8 +155,6 @@ export const FeatureGrid: React.FC = () => {
           </motion.div>
         ))}
       </motion.div>
-      
-
     </section>
   );
 };

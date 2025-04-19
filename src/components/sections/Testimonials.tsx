@@ -126,31 +126,31 @@ export const Testimonials = () => {
   return (
     <section 
       id="testimonials-section"
-      className="bg-[rgba(13,13,13,1)] flex w-full flex-col overflow-hidden items-center mt-[77px] pt-16 pb-24 px-[70px] max-md:max-w-full max-md:mt-10 max-md:pb-16 max-md:px-5"
+      className="bg-[rgba(13,13,13,1)] flex w-full flex-col overflow-hidden items-center mt-10 sm:mt-14 md:mt-[77px] pt-8 sm:pt-12 md:pt-16 pb-12 sm:pb-16 md:pb-24 px-4 sm:px-6 md:px-10 lg:px-[70px]"
     >
       <motion.div 
-        className="w-[1262px] max-w-full"
+        className="w-full max-w-6xl"
         variants={containerVariants}
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
       >
-        <div className="gap-5 flex max-md:flex-col max-md:items-stretch">
+        <div className="flex flex-col md:flex-row gap-5">
           {/* Testimonial 1 */}
           <motion.div 
-            className="w-[33%] max-md:w-full max-md:ml-0"
+            className="w-full md:w-1/3"
             variants={testimonialVariants}
             custom={0}
             onMouseEnter={() => setActiveTestimonial(0)}
           >
             <motion.div 
-              className="flex grow flex-col items-center text-lg text-[rgba(122,122,122,1)] font-normal text-center tracking-[-0.18px] leading-[25px] p-6 rounded-2xl max-md:mt-10"
+              className="flex grow flex-col items-center text-base sm:text-lg text-[rgba(122,122,122,1)] font-normal text-center tracking-[-0.18px] leading-[22px] sm:leading-[25px] p-4 sm:p-6 rounded-xl sm:rounded-2xl mb-6 md:mb-0"
               variants={testimonialHoverVariants}
               initial="rest"
               animate={activeTestimonial === 0 ? "active" : "rest"}
               whileHover="hover"
             >
               <motion.div
-                className="absolute inset-0 bg-gradient-to-b from-[rgba(22,22,22,0.3)] to-transparent rounded-2xl opacity-0"
+                className="absolute inset-0 bg-gradient-to-b from-[rgba(22,22,22,0.3)] to-transparent rounded-xl sm:rounded-2xl opacity-0"
                 animate={activeTestimonial === 0 ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.5 }}
               />
@@ -158,13 +158,13 @@ export const Testimonials = () => {
               <motion.img
                 src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/96221b775c39c3bc200182f9d5d5d4b120943a47?placeholderIfAbsent=true"
                 alt="Company logo"
-                className="aspect-[3.37] object-contain w-[111px] max-w-full"
+                className="aspect-[3.37] object-contain w-[90px] sm:w-[111px] max-w-full"
                 variants={logoVariants}
                 whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
               />
               
               <motion.p 
-                className="self-stretch mt-[13px] relative"
+                className="self-stretch mt-2 sm:mt-[13px] relative"
                 variants={quoteVariants}
               >
                 <motion.span
@@ -184,7 +184,7 @@ export const Testimonials = () => {
               <motion.img
                 src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/eeb780dbd37c697d797a3b4c29ee56d37211ef4d?placeholderIfAbsent=true"
                 alt="Testimonial avatar"
-                className="aspect-[5.85] object-contain w-[117px] max-w-full mt-[39px]"
+                className="aspect-[5.85] object-contain w-[100px] sm:w-[117px] max-w-full mt-6 sm:mt-[39px]"
                 variants={avatarVariants}
                 whileHover={{ 
                   scale: 1.05,
@@ -194,7 +194,7 @@ export const Testimonials = () => {
               />
               
               <motion.div 
-                className="leading-[1.4] mt-[11px]"
+                className="leading-[1.4] mt-2 sm:mt-[11px]"
                 animate={activeTestimonial === 0 ? 
                   { color: "rgba(208,255,0,1)" } : 
                   { color: "rgba(122,122,122,1)" }
@@ -205,7 +205,7 @@ export const Testimonials = () => {
               </motion.div>
               
               <motion.div 
-                className="text-[rgba(204,204,204,1)] mt-[9px]"
+                className="text-[rgba(204,204,204,1)] text-sm sm:text-base mt-1 sm:mt-[9px]"
                 animate={activeTestimonial === 0 ? 
                   { opacity: 1 } : 
                   { opacity: 0.8 }
@@ -218,20 +218,20 @@ export const Testimonials = () => {
 
           {/* Testimonial 2 */}
           <motion.div 
-            className="w-[33%] ml-5 max-md:w-full max-md:ml-0"
+            className="w-full md:w-1/3"
             variants={testimonialVariants}
             custom={1}
             onMouseEnter={() => setActiveTestimonial(1)}
           >
             <motion.div 
-              className="flex flex-col items-center text-lg text-[rgba(122,122,122,1)] font-normal text-center tracking-[-0.18px] leading-[25px] p-6 rounded-2xl max-md:mt-10"
+              className="flex flex-col items-center text-base sm:text-lg text-[rgba(122,122,122,1)] font-normal text-center tracking-[-0.18px] leading-[22px] sm:leading-[25px] p-4 sm:p-6 rounded-xl sm:rounded-2xl mb-6 md:mb-0"
               variants={testimonialHoverVariants}
               initial="rest"
               animate={activeTestimonial === 1 ? "active" : "rest"}
               whileHover="hover"
             >
               <motion.div
-                className="absolute inset-0 bg-gradient-to-b from-[rgba(22,22,22,0.3)] to-transparent rounded-2xl opacity-0"
+                className="absolute inset-0 bg-gradient-to-b from-[rgba(22,22,22,0.3)] to-transparent rounded-xl sm:rounded-2xl opacity-0"
                 animate={activeTestimonial === 1 ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.5 }}
               />
@@ -239,13 +239,13 @@ export const Testimonials = () => {
               <motion.img
                 src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/1c44490d729e02977f9e962880a36d27a6c482ef?placeholderIfAbsent=true"
                 alt="Company logo"
-                className="aspect-[4.27] object-contain w-[141px] max-w-full"
+                className="aspect-[4.27] object-contain w-[120px] sm:w-[141px] max-w-full"
                 variants={logoVariants}
                 whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
               />
               
               <motion.p 
-                className="self-stretch mt-3 relative"
+                className="self-stretch mt-2 sm:mt-3 relative"
                 variants={quoteVariants}
               >
                 <motion.span
@@ -265,7 +265,7 @@ export const Testimonials = () => {
               <motion.img
                 src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/8228c4388cef68dd9795070ea7b74e474cce2ed7?placeholderIfAbsent=true"
                 alt="Testimonial avatar"
-                className="aspect-[5.81] object-contain w-[116px] max-w-full mt-[39px]"
+                className="aspect-[5.81] object-contain w-[100px] sm:w-[116px] max-w-full mt-6 sm:mt-[39px]"
                 variants={avatarVariants}
                 whileHover={{ 
                   scale: 1.05,
@@ -275,7 +275,7 @@ export const Testimonials = () => {
               />
               
               <motion.div 
-                className="leading-[1.4] mt-[11px]"
+                className="leading-[1.4] mt-2 sm:mt-[11px]"
                 animate={activeTestimonial === 1 ? 
                   { color: "rgba(208,255,0,1)" } : 
                   { color: "rgba(122,122,122,1)" }
@@ -286,7 +286,7 @@ export const Testimonials = () => {
               </motion.div>
               
               <motion.div 
-                className="text-[rgba(204,204,204,1)] mt-[13px]"
+                className="text-[rgba(204,204,204,1)] text-sm sm:text-base mt-1 sm:mt-[13px]"
                 animate={activeTestimonial === 1 ? 
                   { opacity: 1 } : 
                   { opacity: 0.8 }
@@ -299,20 +299,20 @@ export const Testimonials = () => {
 
           {/* Testimonial 3 */}
           <motion.div 
-            className="w-[33%] ml-5 max-md:w-full max-md:ml-0"
+            className="w-full md:w-1/3"
             variants={testimonialVariants}
             custom={2}
             onMouseEnter={() => setActiveTestimonial(2)}
           >
             <motion.div 
-              className="flex grow flex-col items-center text-lg text-[rgba(122,122,122,1)] font-normal text-center tracking-[-0.18px] leading-[25px] p-6 rounded-2xl max-md:mt-10"
+              className="flex grow flex-col items-center text-base sm:text-lg text-[rgba(122,122,122,1)] font-normal text-center tracking-[-0.18px] leading-[22px] sm:leading-[25px] p-4 sm:p-6 rounded-xl sm:rounded-2xl"
               variants={testimonialHoverVariants}
               initial="rest"
               animate={activeTestimonial === 2 ? "active" : "rest"}
               whileHover="hover"
             >
               <motion.div
-                className="absolute inset-0 bg-gradient-to-b from-[rgba(22,22,22,0.3)] to-transparent rounded-2xl opacity-0"
+                className="absolute inset-0 bg-gradient-to-b from-[rgba(22,22,22,0.3)] to-transparent rounded-xl sm:rounded-2xl opacity-0"
                 animate={activeTestimonial === 2 ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.5 }}
               />
@@ -320,13 +320,13 @@ export const Testimonials = () => {
               <motion.img
                 src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/74fd87bc5b4c28a5d4ba230f91f551ab8970d190?placeholderIfAbsent=true"
                 alt="Company logo"
-                className="aspect-[3.94] object-contain w-[134px] max-w-full"
+                className="aspect-[3.94] object-contain w-[110px] sm:w-[134px] max-w-full"
                 variants={logoVariants}
                 whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
               />
               
               <motion.p 
-                className="self-stretch mt-[25px] relative"
+                className="self-stretch mt-3 sm:mt-[25px] relative"
                 variants={quoteVariants}
               >
                 <motion.span
@@ -345,7 +345,7 @@ export const Testimonials = () => {
               <motion.img
                 src="https://cdn.builder.io/api/v1/image/assets/aea48a609ed44a0d989d7460db0f3317/62ebc5bb0ae7968af2bbf8893de01b12a348e358?placeholderIfAbsent=true"
                 alt="Testimonial avatar"
-                className="aspect-[5.85] object-contain w-[117px] max-w-full mt-[47px] max-md:mt-10"
+                className="aspect-[5.85] object-contain w-[100px] sm:w-[117px] max-w-full mt-6 sm:mt-[47px]"
                 variants={avatarVariants}
                 whileHover={{ 
                   scale: 1.05,
@@ -355,7 +355,7 @@ export const Testimonials = () => {
               />
               
               <motion.div 
-                className="leading-[1.4] mt-[11px]"
+                className="leading-[1.4] mt-2 sm:mt-[11px]"
                 animate={activeTestimonial === 2 ? 
                   { color: "rgba(208,255,0,1)" } : 
                   { color: "rgba(122,122,122,1)" }
@@ -366,7 +366,7 @@ export const Testimonials = () => {
               </motion.div>
               
               <motion.div 
-                className="text-[rgba(204,204,204,1)] w-[280px] mt-3"
+                className="text-[rgba(204,204,204,1)] text-sm sm:text-base w-full sm:w-[280px] mt-1 sm:mt-3"
                 animate={activeTestimonial === 2 ? 
                   { opacity: 1 } : 
                   { opacity: 0.8 }
@@ -380,7 +380,7 @@ export const Testimonials = () => {
         
         {/* Testimonial Navigation Dots */}
         <motion.div 
-          className="flex justify-center mt-8 gap-2"
+          className="flex justify-center mt-6 sm:mt-8 gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -388,7 +388,7 @@ export const Testimonials = () => {
           {[0, 1, 2].map((index) => (
             <motion.button
               key={index}
-              className="w-3 h-3 rounded-full bg-neutral-800"
+              className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-neutral-800"
               animate={{ 
                 backgroundColor: activeTestimonial === index ? 
                   "rgba(208,255,0,1)" : 

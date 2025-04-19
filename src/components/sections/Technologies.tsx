@@ -100,7 +100,7 @@ export const Technologies = () => {
             whileHover={{ scale: 1.05 }}
           >
             <motion.div 
-              className="w-6 h-6 rounded-full bg-[rgba(22,22,22,1)] border border-[rgba(38,38,38,1)] flex items-center justify-center"
+              className="w-6 h-6  rounded-full bg-[rgba(22,22,22,1)] border border-[rgba(38,38,38,1)] flex items-center justify-center"
               whileHover={{ borderColor: "rgba(208,255,0,0.5)" }}
             >
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +108,7 @@ export const Technologies = () => {
                 <path d="M12 6V18M6 12H18" stroke="rgba(208,255,0,1)" strokeWidth="2" strokeLinecap="round"/>
               </svg>
             </motion.div>
-            <span>Our Technology Partners</span>
+            <span  className='md:text-4xl' >Our Technology Partners</span>
           </motion.div>
           
           <motion.h2 
